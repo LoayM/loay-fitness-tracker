@@ -658,9 +658,101 @@ function setupEventListeners() {
     a.click();
     URL.revokeObjectURL(url);
   });
+
+  // Share Authorized Link
+  const shareBtn = document.getElementById('share-access-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      const shareUrl = `${window.location.origin}${window.location.pathname}?auth=7777`;
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        const orig = shareBtn.textContent;
+        shareBtn.textContent = '✅ Authorized Link Copied!';
+        setTimeout(() => {
+          shareBtn.textContent = orig;
+        }, 2500);
+      } catch (err) {
+        prompt('Copy this authorized link to share access:', shareUrl);
+      }
+    });
+  }
+
+  // Lock button
+  const lockBtn = document.getElementById('lock-dashboard-btn');
+  if (lockBtn) {
+    lockBtn.addEventListener('click', () => {
+      try {
+        localStorage.removeItem('loay_pin_unlocked_v1');
+      } catch (e) {}
+      document.body.classList.add('locked');
+      document.getElementById('auth-overlay').classList.remove('hidden');
+      const pinInput = document.getElementById('auth-pin-input');
+      if (pinInput) {
+        pinInput.value = '';
+        pinInput.focus();
+      }
+    });
+  }
+}
+
+function setupAuthGate() {
+  const ACCESS_PIN = '7777';
+  const AUTH_KEY = 'loay_pin_unlocked_v1';
+  const overlay = document.getElementById('auth-overlay');
+  const pinInput = document.getElementById('auth-pin-input');
+  const authForm = document.getElementById('auth-form');
+  const errorEl = document.getElementById('auth-error');
+
+  function unlock() {
+    try {
+      localStorage.setItem(AUTH_KEY, ACCESS_PIN);
+    } catch (e) {}
+    document.body.classList.remove('locked');
+    if (overlay) overlay.classList.add('hidden');
+    if (errorEl) errorEl.textContent = '';
+    // Clean URL if unlocked via ?auth=7777
+    if (window.location.search.includes('auth=')) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
+
+  // Check URL magic link (?auth=7777) or saved device authorization
+  const params = new URLSearchParams(window.location.search);
+  let savedAuth = null;
+  try {
+    savedAuth = localStorage.getItem(AUTH_KEY);
+  } catch (e) {}
+
+  if (params.get('auth') === ACCESS_PIN || params.get('key') === ACCESS_PIN || savedAuth === ACCESS_PIN) {
+    unlock();
+  }
+
+  if (pinInput) {
+    pinInput.addEventListener('input', () => {
+      errorEl.textContent = '';
+      if (pinInput.value === ACCESS_PIN) {
+        unlock();
+      } else if (pinInput.value.length === 4) {
+        errorEl.textContent = 'Incorrect PIN. Please try again.';
+      }
+    });
+  }
+
+  if (authForm) {
+    authForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (pinInput.value === ACCESS_PIN) {
+        unlock();
+      } else {
+        errorEl.textContent = 'Incorrect PIN. Please try again.';
+        pinInput.select();
+      }
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  setupAuthGate();
   loadScans();
   setupEventListeners();
   renderAll();

@@ -10,7 +10,38 @@
   <title>Loay Mualem • Body Recomposition & Performance Lab</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="locked">
+  <!-- Private PIN Gate Overlay -->
+  <div class="auth-overlay" id="auth-overlay">
+    <div class="auth-card">
+      <div class="auth-lock-icon">🔒</div>
+      <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">Private Performance Lab</h2>
+      <p style="font-size:0.86rem;color:var(--text-secondary);">
+        Enter your 4-digit access PIN to view Loay’s body recomposition dashboard.
+      </p>
+      <form id="auth-form">
+        <input
+          type="password"
+          id="auth-pin-input"
+          class="auth-pin-input"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="4"
+          placeholder="••••"
+          autocomplete="off"
+          autofocus
+        />
+        <div class="auth-error" id="auth-error"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px;">
+          Unlock Dashboard
+        </button>
+      </form>
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:14px;">
+        Your device stays remembered once unlocked.
+      </p>
+    </div>
+  </div>
+
   <div class="container">
     <!-- Top Header -->
     <header class="top-header">
@@ -30,8 +61,10 @@
         </div>
       </div>
       <div class="header-actions">
+        <button class="btn" id="share-access-btn" title="Copy a magic link that automatically unlocks the site for someone you trust">🔗 Copy Authorized Link</button>
         <button class="btn" id="export-json-btn">⬇ Export Data</button>
         <button class="btn btn-primary" id="open-scan-modal-btn">＋ Log New Arboleaf Scan</button>
+        <button class="btn" id="lock-dashboard-btn" title="Lock dashboard on this device">🔒</button>
       </div>
     </header>
 

@@ -119,19 +119,22 @@ let state = {
 };
 
 function loadScans() {
+  const byDate = new Map();
+  INITIAL_SCANS.forEach((s) => byDate.set(s.date, s));
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length >= 2) {
-        state.scans = parsed.sort((a, b) => a.date.localeCompare(b.date));
-        return;
+      if (Array.isArray(parsed)) {
+        parsed.forEach((s) => {
+          if (s && s.date) byDate.set(s.date, s);
+        });
       }
     }
   } catch (e) {
     console.warn('Could not read localStorage, using initial scans.', e);
   }
-  state.scans = [...INITIAL_SCANS];
+  state.scans = Array.from(byDate.values()).sort((a, b) => a.date.localeCompare(b.date));
 }
 
 function saveScans() {

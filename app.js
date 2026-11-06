@@ -15,6 +15,7 @@ const INITIAL_SCANS = [
     softLeanMass: 66.79,
     skeletalMuscle: 45.3,
     skeletalMusclePct: 48.4,
+    muscleMassPct: 71.4,
     bodyWater: 50.7,
     bodyWaterPct: 54.2,
     proteinKg: 15.9,
@@ -25,11 +26,11 @@ const INITIAL_SCANS = [
     whr: 1.01,
     fitnessScore: 69.0,
     segments: {
-      leftArm: { muscleKg: 3.74, muscleEval: 99.8, fatKg: 1.68, fatEval: 264.6, fatPct: 1.8 },
-      rightArm: { muscleKg: 3.79, muscleEval: 101.2, fatKg: 1.73, fatEval: 272.5, fatPct: 1.8 },
-      trunk: { muscleKg: 29.30, muscleEval: 94.8, fatKg: 12.80, fatEval: 286.0, fatPct: 13.7 },
-      leftLeg: { muscleKg: 10.37, muscleEval: 95.1, fatKg: 3.31, fatEval: 181.9, fatPct: 3.5 },
-      rightLeg: { muscleKg: 10.47, muscleEval: 96.1, fatKg: 3.32, fatEval: 182.7, fatPct: 3.5 }
+      leftArm: { muscleKg: 3.74, muscleEval: 99.8, musclePct: 4.0, fatKg: 1.68, fatEval: 264.6, fatPct: 1.8 },
+      rightArm: { muscleKg: 3.79, muscleEval: 101.2, musclePct: 4.1, fatKg: 1.73, fatEval: 272.5, fatPct: 1.8 },
+      trunk: { muscleKg: 29.30, muscleEval: 94.8, musclePct: 31.3, fatKg: 12.80, fatEval: 286.0, fatPct: 13.7 },
+      leftLeg: { muscleKg: 10.37, muscleEval: 95.1, musclePct: 11.1, fatKg: 3.31, fatEval: 181.9, fatPct: 3.5 },
+      rightLeg: { muscleKg: 10.47, muscleEval: 96.1, musclePct: 11.2, fatKg: 3.32, fatEval: 182.7, fatPct: 3.5 }
     }
   },
   {
@@ -48,6 +49,7 @@ const INITIAL_SCANS = [
     softLeanMass: 66.57,
     skeletalMuscle: 45.3,
     skeletalMusclePct: 48.7,
+    muscleMassPct: 71.5,
     bodyWater: 50.6,
     bodyWaterPct: 54.4,
     proteinKg: 16.0,
@@ -58,11 +60,11 @@ const INITIAL_SCANS = [
     whr: 1.01,
     fitnessScore: 69.2,
     segments: {
-      leftArm: { muscleKg: 3.73, muscleEval: 99.7, fatKg: 1.65, fatEval: 260.3, fatPct: 1.8 },
-      rightArm: { muscleKg: 3.78, muscleEval: 101.1, fatKg: 1.70, fatEval: 268.1, fatPct: 1.8 },
-      trunk: { muscleKg: 29.22, muscleEval: 94.9, fatKg: 12.64, fatEval: 282.3, fatPct: 13.6 },
-      leftLeg: { muscleKg: 10.34, muscleEval: 95.2, fatKg: 3.27, fatEval: 179.9, fatPct: 3.5 },
-      rightLeg: { muscleKg: 10.44, muscleEval: 96.1, fatKg: 3.28, fatEval: 180.6, fatPct: 3.5 }
+      leftArm: { muscleKg: 3.73, muscleEval: 99.7, musclePct: 4.0, fatKg: 1.65, fatEval: 260.3, fatPct: 1.8 },
+      rightArm: { muscleKg: 3.78, muscleEval: 101.1, musclePct: 4.1, fatKg: 1.70, fatEval: 268.1, fatPct: 1.8 },
+      trunk: { muscleKg: 29.22, muscleEval: 94.9, musclePct: 31.4, fatKg: 12.64, fatEval: 282.3, fatPct: 13.6 },
+      leftLeg: { muscleKg: 10.34, muscleEval: 95.2, musclePct: 11.1, fatKg: 3.27, fatEval: 179.9, fatPct: 3.5 },
+      rightLeg: { muscleKg: 10.44, muscleEval: 96.1, musclePct: 11.2, fatKg: 3.28, fatEval: 180.6, fatPct: 3.5 }
     }
   },
   {
@@ -81,6 +83,7 @@ const INITIAL_SCANS = [
     softLeanMass: 66.38,
     skeletalMuscle: 45.2,
     skeletalMusclePct: 48.9,
+    muscleMassPct: 71.8,
     bodyWater: 50.4,
     bodyWaterPct: 54.5,
     proteinKg: 15.9,
@@ -91,11 +94,11 @@ const INITIAL_SCANS = [
     whr: 1.01,
     fitnessScore: 69.7,
     segments: {
-      leftArm: { muscleKg: 3.71, muscleEval: 99.6, fatKg: 1.61, fatEval: 254.0, fatPct: 1.7 },
-      rightArm: { muscleKg: 3.76, muscleEval: 101.0, fatKg: 1.66, fatEval: 261.6, fatPct: 1.8 },
-      trunk: { muscleKg: 29.11, muscleEval: 94.9, fatKg: 12.40, fatEval: 277.0, fatPct: 13.4 },
-      leftLeg: { muscleKg: 10.31, muscleEval: 95.4, fatKg: 3.22, fatEval: 176.9, fatPct: 3.5 },
-      rightLeg: { muscleKg: 10.41, muscleEval: 96.3, fatKg: 3.23, fatEval: 177.6, fatPct: 3.5 }
+      leftArm: { muscleKg: 3.71, muscleEval: 99.6, musclePct: 4.0, fatKg: 1.61, fatEval: 254.0, fatPct: 1.7 },
+      rightArm: { muscleKg: 3.76, muscleEval: 101.0, musclePct: 4.1, fatKg: 1.66, fatEval: 261.6, fatPct: 1.8 },
+      trunk: { muscleKg: 29.11, muscleEval: 94.9, musclePct: 31.5, fatKg: 12.40, fatEval: 277.0, fatPct: 13.4 },
+      leftLeg: { muscleKg: 10.31, muscleEval: 95.4, musclePct: 11.2, fatKg: 3.22, fatEval: 176.9, fatPct: 3.5 },
+      rightLeg: { muscleKg: 10.41, muscleEval: 96.3, musclePct: 11.3, fatKg: 3.23, fatEval: 177.6, fatPct: 3.5 }
     }
   }
 ];
@@ -109,13 +112,13 @@ const GOAL = {
   targetMuscle: 45.3
 };
 
-const STORAGE_KEY = 'loay_arboleaf_scans_v2';
+const STORAGE_KEY = 'loay_arboleaf_scans_v3';
 
 let state = {
   scans: [],
-  chartMetric: 'weight', // 'weight' | 'fatMass' | 'pbf' | 'skeletalMuscle'
-  segmentMode: 'fat', // 'fat' | 'muscle'
-  selectedSegment: 'trunk'
+  chartMetric: 'weight', // 'weight' | 'fatMass' | 'pbf' | 'skeletalMusclePct'
+  segmentMode: 'muscle', // 'muscle' | 'fat'
+  morphPct: 0 // 0 to 100 (Time-Machine slider)
 };
 
 function loadScans() {
@@ -151,6 +154,24 @@ function formatSigned(val, decimals = 2, unit = '') {
   return `${sign}${num.toFixed(decimals)}${unit}`;
 }
 
+function makeRingSvg(pct, color, label) {
+  const r = 27;
+  const c = 2 * Math.PI * r;
+  const clamped = Math.max(4, Math.min(100, pct));
+  const offset = c - (clamped / 100) * c;
+  return `
+    <div class="kpi-ring-wrap">
+      <svg width="68" height="68" viewBox="0 0 68 68">
+        <circle cx="34" cy="34" r="${r}" fill="none" stroke="#e2e8f0" stroke-width="6" />
+        <circle cx="34" cy="34" r="${r}" fill="none" stroke="${color}" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${offset.toFixed(1)}"
+          transform="rotate(-90 34 34)" />
+      </svg>
+      <div class="kpi-ring-text">${label}</div>
+    </div>
+  `;
+}
+
 function renderAll() {
   const first = state.scans[0];
   const latest = state.scans[state.scans.length - 1];
@@ -158,7 +179,7 @@ function renderAll() {
   renderGoalBanner(first, latest);
   renderKPIs(first, latest);
   renderTrajectoryChart();
-  renderSegmentalBodyMap(first, latest);
+  render3DBodyStudio(first, latest);
   renderScanTable(first);
   updateCalculator();
 }
@@ -166,7 +187,8 @@ function renderAll() {
 function renderGoalBanner(first, latest) {
   const totalFatToLose = first.fatMass - GOAL.targetFat; // 10.90 kg
   const fatLostSoFar = Math.max(0, first.fatMass - latest.fatMass);
-  const pctDone = Math.min(100, Math.max(2, (fatLostSoFar / totalFatToLose) * 100));
+  const weightLostSoFar = Math.max(0, first.weight - latest.weight);
+  const pctDone = Math.min(100, Math.max(3, (fatLostSoFar / totalFatToLose) * 100));
 
   const daysElapsed = Math.max(
     1,
@@ -174,77 +196,84 @@ function renderGoalBanner(first, latest) {
   );
   const dailyFatLossKg = fatLostSoFar / daysElapsed;
   const weeklyFatLossKg = dailyFatLossKg * 7;
-  const monthlyFatLossKg = dailyFatLossKg * 30;
-  const dailyDeficitKcal = Math.round(dailyFatLossKg * 7700);
 
-  document.getElementById('goal-progress-pct').textContent = `${pctDone.toFixed(1)}% Complete`;
+  document.getElementById('goal-progress-pct').textContent = `${pctDone.toFixed(1)}% of Fat Goal Complete`;
   document.getElementById('goal-progress-detail').textContent =
-    `${fatLostSoFar.toFixed(2)} kg pure fat burned of ${totalFatToLose.toFixed(1)} kg goal (${(GOAL.startWeight - latest.weight).toFixed(2)} kg total weight drop)`;
+    `${fatLostSoFar.toFixed(2)} kg pure fat burned • -${weightLostSoFar.toFixed(2)} kg total weight`;
   document.getElementById('goal-bar-fill').style.width = `${pctDone}%`;
+  document.getElementById('banner-now-weight').textContent = `${latest.weight.toFixed(2)} kg (${latest.pbf.toFixed(1)}% BF)`;
 
-  document.getElementById('pace-val').textContent = `-${weeklyFatLossKg.toFixed(2)} kg/wk`;
+  document.getElementById('pace-val').textContent = `-${weeklyFatLossKg.toFixed(2)} kg / wk`;
   document.getElementById('pace-sub').textContent =
-    `~${monthlyFatLossKg.toFixed(1)} kg pure fat/mo • ~${dailyDeficitKcal} kcal/day measured deficit`;
+    `~${Math.round(dailyFatLossKg * 1000)}g pure fat/day • Muscle % UP to ${latest.skeletalMusclePct.toFixed(1)}%`;
 }
 
 function renderKPIs(first, latest) {
   const wDiff = latest.weight - first.weight;
   const fDiff = latest.fatMass - first.fatMass;
   const pbfDiff = latest.pbf - first.pbf;
-  const mDiff = latest.skeletalMuscle - first.skeletalMuscle;
+  const mPctDiff = latest.skeletalMusclePct - first.skeletalMusclePct;
   const trunkFatDiff = latest.segments.trunk.fatKg - first.segments.trunk.fatKg;
-  const protDiff = latest.proteinKg - first.proteinKg;
+  const scoreDiff = latest.fitnessScore - first.fitnessScore;
+
+  const weightDonePct = ((first.weight - latest.weight) / (first.weight - GOAL.targetWeight)) * 100;
+  const fatDonePct = ((first.fatMass - latest.fatMass) / (first.fatMass - GOAL.targetFat)) * 100;
 
   const kpis = [
     {
-      label: 'Body Weight',
-      tag: 'Target: 82.65 kg',
-      tagClass: 'tag-info',
+      label: 'Current Weight',
       value: latest.weight.toFixed(2),
       unit: 'kg',
-      delta: `${formatSigned(wDiff, 2, ' kg')} since ${first.date}`,
+      delta: `${formatSigned(wDiff, 2, ' kg')} in 4 days`,
       deltaClass: wDiff <= 0 ? 'delta-positive' : 'delta-negative',
-      sub: `${(latest.weight - GOAL.targetWeight).toFixed(2)} kg remaining to target`
+      sub: `${(latest.weight - GOAL.targetWeight).toFixed(2)} kg to 82.65 kg goal`,
+      ringPct: Math.max(10, weightDonePct),
+      ringColor: '#2563eb',
+      ringText: `-${Math.abs(wDiff).toFixed(1)}kg`
     },
     {
       label: 'Pure Fat Mass',
-      tag: `${latest.pbf.toFixed(1)}% Body Fat`,
-      tagClass: 'tag-warn',
       value: latest.fatMass.toFixed(2),
       unit: 'kg',
-      delta: `${formatSigned(fDiff, 2, ' kg')} (${formatSigned(pbfDiff, 1, '%')})`,
+      delta: `${formatSigned(fDiff, 2, ' kg')} (${formatSigned(pbfDiff, 1, '% BF')})`,
       deltaClass: fDiff <= 0 ? 'delta-positive' : 'delta-negative',
-      sub: `Subcutaneous: ${latest.subcutaneousFatKg.toFixed(2)} kg • Visceral: ${latest.visceralFat}`
+      sub: `Body Fat: ${latest.pbf.toFixed(1)}% (Goal 15.0%)`,
+      ringPct: Math.max(10, fatDonePct),
+      ringColor: '#f97316',
+      ringText: `${latest.pbf.toFixed(1)}%`
     },
     {
-      label: 'Skeletal Muscle',
-      tag: `${latest.skeletalMusclePct.toFixed(1)}% of BW`,
-      tagClass: 'tag-good',
-      value: latest.skeletalMuscle.toFixed(1),
-      unit: 'kg',
-      delta: `${formatSigned(mDiff, 2, ' kg')} (${formatSigned(latest.skeletalMusclePct - first.skeletalMusclePct, 1, '% ratio')})`,
-      deltaClass: mDiff >= 0 ? 'delta-positive' : 'delta-negative',
-      sub: `Fat-Free Mass: ${latest.lbm.toFixed(1)} kg • SMI: ${latest.smi}`
+      label: 'Skeletal Muscle %',
+      value: latest.skeletalMusclePct.toFixed(1),
+      unit: '%',
+      delta: `${formatSigned(mPctDiff, 1, '%')} All-Time High!`,
+      deltaClass: 'delta-positive',
+      sub: `${latest.skeletalMuscle.toFixed(1)} kg Muscle • ${latest.lbm.toFixed(1)} kg LBM`,
+      ringPct: 88,
+      ringColor: '#10b981',
+      ringText: `${latest.skeletalMuscle.toFixed(1)}kg`
     },
     {
-      label: 'Trunk (Belly) Fat',
-      tag: '55% of Total Loss',
-      tagClass: 'tag-good',
+      label: 'Belly / Trunk Fat',
       value: latest.segments.trunk.fatKg.toFixed(2),
       unit: 'kg',
-      delta: `${formatSigned(trunkFatDiff, 2, ' kg')} off midsection`,
-      deltaClass: trunkFatDiff <= 0 ? 'delta-positive' : 'delta-negative',
-      sub: `Waist-Hip Ratio: ${latest.whr} (Goal ≤ 0.90)`
+      delta: `${formatSigned(trunkFatDiff, 2, ' kg')} off waist!`,
+      deltaClass: 'delta-positive',
+      sub: `55% of all fat lost came from Trunk`,
+      ringPct: 72,
+      ringColor: '#059669',
+      ringText: `-400g`
     },
     {
-      label: 'Protein & Hydration',
-      tag: 'Optimal Recovery',
-      tagClass: 'tag-good',
-      value: latest.proteinKg.toFixed(1),
-      unit: 'kg',
-      delta: `${formatSigned(protDiff, 1, ' kg')} cellular protein`,
-      deltaClass: protDiff >= 0 ? 'delta-positive' : 'delta-neutral',
-      sub: `Body Water: ${latest.bodyWater.toFixed(1)} L (${latest.bodyWaterPct.toFixed(1)}%)`
+      label: 'Fitness Score',
+      value: latest.fitnessScore.toFixed(1),
+      unit: '/100',
+      delta: `${formatSigned(scoreDiff, 1, ' pts')} since Nov 2`,
+      deltaClass: 'delta-positive',
+      sub: `Water: ${latest.bodyWaterPct.toFixed(1)}% • Protein: ${latest.proteinPct.toFixed(1)}%`,
+      ringPct: latest.fitnessScore,
+      ringColor: '#7c3aed',
+      ringText: `${latest.fitnessScore.toFixed(0)}pt`
     }
   ];
 
@@ -253,74 +282,188 @@ function renderKPIs(first, latest) {
     .map(
       (k) => `
       <div class="kpi-card">
-        <div class="kpi-top">
-          <span class="kpi-label">${k.label}</span>
-          <span class="kpi-tag ${k.tagClass}">${k.tag}</span>
+        <div class="kpi-info">
+          <div class="kpi-label">${k.label}</div>
+          <div>
+            <span class="kpi-value">${k.value}</span>
+            <span class="kpi-unit">${k.unit}</span>
+          </div>
+          <div class="kpi-delta ${k.deltaClass}">${k.delta}</div>
+          <div class="kpi-subtext">${k.sub}</div>
         </div>
-        <div>
-          <span class="kpi-value">${k.value}</span>
-          <span class="kpi-unit">${k.unit}</span>
-        </div>
-        <div class="kpi-delta ${k.deltaClass}">${k.delta}</div>
-        <div class="kpi-subtext">${k.sub}</div>
+        ${makeRingSvg(k.ringPct, k.ringColor, k.ringText)}
       </div>
     `
     )
     .join('');
 }
 
+function render3DBodyStudio(first, latest) {
+  const isMuscle = state.segmentMode === 'muscle';
+  const m = state.morphPct / 100; // 0 = current latest scan, 1 = Feb 5 Goal (82.65 kg)
+
+  // Interpolate metrics for the 3D Time-Machine slider!
+  const simWeight = latest.weight - m * (latest.weight - GOAL.targetWeight);
+  const simPbf = latest.pbf - m * (latest.pbf - GOAL.targetPbf);
+  const simMusclePct = latest.skeletalMusclePct + m * (54.8 - latest.skeletalMusclePct);
+
+  // Morph the 3D SVG Waist Width and Six-Pack Definition!
+  // At m=0 (today), waist control points are wider (x=78 & x=162); at m=1 (15% BF), sharp V-taper (x=90 & x=150)
+  const wOuterL = (78 + m * 13).toFixed(1);
+  const wOuterR = (162 - m * 13).toFixed(1);
+  const hipL = (84 + m * 8).toFixed(1);
+  const hipR = (156 - m * 8).toFixed(1);
+
+  const torsoPath = document.getElementById('torso-3d-path');
+  if (torsoPath) {
+    torsoPath.setAttribute(
+      'd',
+      `M 68 72 Q 120 64 172 72 C 178 102, ${wOuterR} 135, ${wOuterR} 165 C ${wOuterR} 184, ${hipR} 202, 154 214 Q 120 224 86 214 C ${hipL} 202, ${wOuterL} 184, ${wOuterL} 165 C ${wOuterL} 135, 62 102, 68 72 Z`
+    );
+    torsoPath.setAttribute('fill', isMuscle ? 'url(#muscleTorsoGrad)' : 'url(#fatTorsoGrad)');
+  }
+
+  const absEl = document.getElementById('abs-definition');
+  if (absEl) {
+    absEl.setAttribute('opacity', (0.42 + m * 0.55).toFixed(2));
+  }
+
+  const captionEl = document.getElementById('mannequin-stage-caption');
+  const statusEl = document.getElementById('morph-status-label');
+  if (m === 0) {
+    captionEl.textContent = `Live Scan (${latest.date}): ${latest.weight.toFixed(2)} kg • ${latest.skeletalMusclePct.toFixed(1)}% Muscle`;
+    statusEl.textContent = `Current (${latest.date}): ${latest.weight.toFixed(2)} kg • ${latest.pbf.toFixed(1)}% BF`;
+  } else {
+    captionEl.textContent = `🔮 Time-Machine Preview (${Math.round(m * 100)}%): ${simWeight.toFixed(1)} kg • ${simMusclePct.toFixed(1)}% Muscle • ${simPbf.toFixed(1)}% BF`;
+    statusEl.textContent = `Previewing ${simWeight.toFixed(1)} kg (${simPbf.toFixed(1)}% Athletic BF)`;
+  }
+
+  // Build non-overlapping HUD Callouts on Left & Right columns
+  function buildCardHtml(segKey, title, isHighlight = false) {
+    const cur = latest.segments[segKey];
+    const base = first.segments[segKey];
+
+    // Simulated values when dragging Time-Machine slider
+    const simFatKg =
+      segKey === 'trunk'
+        ? cur.fatKg - m * 6.1
+        : cur.fatKg - m * (cur.fatKg * 0.42);
+    const simMuscKg = cur.muscleKg + m * 0.08;
+    const simMuscEval = cur.muscleEval + m * 4.5;
+
+    if (isMuscle) {
+      const muscRatioPct = ((simMuscKg / simWeight) * 100).toFixed(1);
+      const evalDelta = cur.muscleEval - base.muscleEval;
+      return `
+        <div class="hud-callout ${isHighlight ? 'trunk-highlight' : ''}">
+          <div class="hud-top">
+            <span>${title}</span>
+            <span class="hud-badge" style="background:var(--emerald-soft);color:var(--emerald);">${simMuscEval.toFixed(1)}% Std</span>
+          </div>
+          <div class="hud-main-val">
+            <span>${simMuscKg.toFixed(2)} kg</span>
+            <span class="hud-delta" style="color:var(--emerald);">(${muscRatioPct}% of BW)</span>
+          </div>
+          <div class="hud-bar">
+            <div class="hud-bar-fill" style="width:${Math.min(100, simMuscEval)}%;background:linear-gradient(90deg,#3b82f6,#10b981);"></div>
+          </div>
+          <div class="hud-sub">
+            Strength Rating: <strong>Sufficient (${formatSigned(evalDelta, 1, '%')} vs Nov 2)</strong>
+          </div>
+        </div>
+      `;
+    } else {
+      const fatDiff = simFatKg - base.fatKg;
+      const fatSharePct = ((simFatKg / simWeight) * 100).toFixed(1);
+      return `
+        <div class="hud-callout ${isHighlight ? 'trunk-highlight' : ''}">
+          <div class="hud-top">
+            <span>${title}</span>
+            <span class="hud-badge" style="background:var(--orange-soft);color:var(--orange);">${fatSharePct}% BW</span>
+          </div>
+          <div class="hud-main-val">
+            <span>${simFatKg.toFixed(2)} kg</span>
+            <span class="hud-delta" style="color:var(--emerald);">${formatSigned(fatDiff, 2, ' kg')}</span>
+          </div>
+          <div class="hud-bar">
+            <div class="hud-bar-fill" style="width:${Math.min(100, (simFatKg / (segKey === 'trunk' ? 14 : 4)) * 100)}%;background:linear-gradient(90deg,#f59e0b,#ef4444);"></div>
+          </div>
+          <div class="hud-sub">
+            ${segKey === 'trunk' ? '🔥 #1 Fastest Fat-Burning Zone!' : 'Steady Subcutaneous Burn'}
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  document.getElementById('callouts-left').innerHTML = [
+    buildCardHtml('rightArm', '💪 Right Arm'),
+    buildCardHtml('rightLeg', '🦵 Right Leg')
+  ].join('');
+
+  document.getElementById('callouts-right').innerHTML = [
+    buildCardHtml('trunk', '🎯 Trunk / Core', true),
+    buildCardHtml('leftArm', '💪 Left Arm'),
+    buildCardHtml('leftLeg', '🦵 Left Leg')
+  ].join('');
+}
+
 function renderTrajectoryChart() {
   const metricConfig = {
     weight: {
-      label: 'Weight (kg)',
-      unit: 'kg',
-      color: '#38bdf8',
-      goalVal: 82.65,
+      label: 'Total Weight (kg)',
+      unit: ' kg',
+      color: '#2563eb',
+      gradStart: 'rgba(37, 99, 235, 0.24)',
+      gradEnd: 'rgba(37, 99, 235, 0.0)',
       projections: [
         { date: '2026-11-02', val: 93.55, tag: 'Start' },
-        { date: '2026-12-01', val: 89.60, tag: 'Fly to Sydney (NeurIPS)' },
-        { date: '2026-12-22', val: 88.00, tag: 'Return from NZ & GBR' },
+        { date: '2026-12-01', val: 89.50, tag: 'Sydney' },
+        { date: '2026-12-22', val: 88.00, tag: 'Post-Trip' },
         { date: '2027-01-15', val: 85.10, tag: 'Mid-Jan' },
-        { date: '2027-02-05', val: 82.65, tag: '3-Mo Target' }
+        { date: '2027-02-05', val: 82.65, tag: 'Goal 🎯' }
       ]
     },
     fatMass: {
-      label: 'Body Fat Mass (kg)',
-      unit: 'kg',
-      color: '#f59e0b',
-      goalVal: 12.39,
+      label: 'Pure Fat Mass (kg)',
+      unit: ' kg',
+      color: '#ea580c',
+      gradStart: 'rgba(234, 88, 12, 0.24)',
+      gradEnd: 'rgba(234, 88, 12, 0.0)',
       projections: [
         { date: '2026-11-02', val: 23.29, tag: 'Start' },
-        { date: '2026-12-01', val: 20.30, tag: 'Fly to Sydney' },
-        { date: '2026-12-22', val: 18.70, tag: 'Return from NZ & GBR' },
-        { date: '2027-01-15', val: 15.40, tag: 'Mid-Jan' },
-        { date: '2027-02-05', val: 12.39, tag: 'Goal Fat Mass' }
+        { date: '2026-12-01', val: 20.10, tag: 'Sydney' },
+        { date: '2026-12-22', val: 18.50, tag: 'Post-Trip' },
+        { date: '2027-01-15', val: 15.20, tag: 'Mid-Jan' },
+        { date: '2027-02-05', val: 12.39, tag: 'Goal 🎯' }
       ]
     },
     pbf: {
-      label: 'Body Fat (%)',
+      label: 'Body Fat Percentage (%)',
       unit: '%',
-      color: '#f43f5e',
-      goalVal: 15.0,
+      color: '#e11d48',
+      gradStart: 'rgba(225, 29, 72, 0.22)',
+      gradEnd: 'rgba(225, 29, 72, 0.0)',
       projections: [
         { date: '2026-11-02', val: 24.9, tag: 'Start' },
-        { date: '2026-12-01', val: 22.5, tag: 'Fly to Sydney' },
-        { date: '2026-12-22', val: 21.1, tag: 'Return from NZ & GBR' },
-        { date: '2027-01-15', val: 18.0, tag: 'Mid-Jan' },
-        { date: '2027-02-05', val: 15.0, tag: 'Athletic 15%' }
+        { date: '2026-12-01', val: 22.4, tag: 'Sydney' },
+        { date: '2026-12-22', val: 21.0, tag: 'Post-Trip' },
+        { date: '2027-01-15', val: 17.9, tag: 'Mid-Jan' },
+        { date: '2027-02-05', val: 15.0, tag: '15% BF 🎯' }
       ]
     },
-    skeletalMuscle: {
-      label: 'Skeletal Muscle (kg)',
-      unit: 'kg',
-      color: '#10b981',
-      goalVal: 45.3,
+    skeletalMusclePct: {
+      label: 'Skeletal Muscle Ratio (% of Body Weight)',
+      unit: '%',
+      color: '#059669',
+      gradStart: 'rgba(5, 150, 105, 0.24)',
+      gradEnd: 'rgba(5, 150, 105, 0.0)',
       projections: [
-        { date: '2026-11-02', val: 45.3, tag: 'Start' },
-        { date: '2026-12-01', val: 45.3, tag: 'Fly to Sydney' },
-        { date: '2026-12-22', val: 45.3, tag: 'Return from Trip' },
-        { date: '2027-01-15', val: 45.4, tag: 'Muscle Memory Recomp' },
-        { date: '2027-02-05', val: 45.5, tag: '100% Retained' }
+        { date: '2026-11-02', val: 48.4, tag: 'Start' },
+        { date: '2026-12-01', val: 50.6, tag: 'Sydney' },
+        { date: '2026-12-22', val: 51.5, tag: 'Post-Trip' },
+        { date: '2027-01-15', val: 53.2, tag: 'Mid-Jan' },
+        { date: '2027-02-05', val: 54.8, tag: 'Athletic 🎯' }
       ]
     }
   };
@@ -332,8 +475,7 @@ function renderTrajectoryChart() {
   const actualPoints = state.scans.map((s) => ({
     date: s.date,
     t: new Date(s.date).getTime(),
-    val: s[state.chartMetric],
-    label: `${s.date.slice(5)}: ${s[state.chartMetric]}${cfg.unit}`
+    val: s[state.chartMetric]
   }));
 
   const projPoints = cfg.projections.map((p) => ({
@@ -341,156 +483,109 @@ function renderTrajectoryChart() {
     t: new Date(p.date).getTime()
   }));
 
-  const allVals = [
-    ...actualPoints.map((p) => p.val),
-    ...projPoints.map((p) => p.val),
-    cfg.goalVal
-  ];
+  const allVals = [...actualPoints.map((p) => p.val), ...projPoints.map((p) => p.val)];
+  const minVal = Math.floor(Math.min(...allVals) - 1.5);
+  const maxVal = Math.ceil(Math.max(...allVals) + 1.5);
 
-  const minVal = Math.floor(Math.min(...allVals) - 2);
-  const maxVal = Math.ceil(Math.max(...allVals) + 2);
+  const W = 720;
+  const H = 320;
+  const padL = 52;
+  const padR = 36;
+  const padT = 32;
+  const padB = 46;
 
-  const W = 760;
-  const H = 290;
-  const padL = 48;
-  const padR = 28;
-  const padT = 26;
-  const padB = 42;
+  const xOf = (t) => padL + ((t - startDate) / (endDate - startDate)) * (W - padL - padR);
+  const yOf = (v) => padT + (1 - (v - minVal) / (maxVal - minVal || 1)) * (H - padT - padB);
 
-  const xOf = (t) =>
-    padL + ((t - startDate) / (endDate - startDate)) * (W - padL - padR);
-  const yOf = (v) =>
-    padT + (1 - (v - minVal) / (maxVal - minVal || 1)) * (H - padT - padB);
-
-  // Grid lines
   let gridSvg = '';
-  const steps = 4;
-  for (let i = 0; i <= steps; i++) {
-    const val = minVal + ((maxVal - minVal) * i) / steps;
+  for (let i = 0; i <= 4; i++) {
+    const val = minVal + ((maxVal - minVal) * i) / 4;
     const y = yOf(val);
     gridSvg += `
-      <line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4"/>
-      <text x="${padL - 8}" y="${y + 4}" text-anchor="end" fill="#64748b" font-size="11">${val.toFixed(1)}</text>
+      <line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#e2e8f0" stroke-dasharray="4 4"/>
+      <text x="${padL - 10}" y="${y + 4}" text-anchor="end" fill="#64748b" font-size="11" font-weight="700">${val.toFixed(1)}</text>
     `;
   }
 
-  // Highlight Australia / NZ / GBR travel zone (Dec 1 to Dec 22)
+  // Highlight Dec 1–22 Trip Zone
   const tripStartX = xOf(new Date('2026-12-01').getTime());
   const tripEndX = xOf(new Date('2026-12-22').getTime());
   const tripBandSvg = `
     <rect x="${tripStartX}" y="${padT}" width="${tripEndX - tripStartX}" height="${H - padT - padB}"
-      fill="rgba(139, 92, 246, 0.11)" stroke="rgba(139, 92, 246, 0.3)" stroke-dasharray="3 3" rx="6" />
-    <text x="${(tripStartX + tripEndX) / 2}" y="${padT + 14}" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="600">
-      ✈️ NeurIPS + NZ + GBR (3 Wks)
+      fill="rgba(124, 58, 237, 0.07)" stroke="rgba(124, 58, 237, 0.28)" stroke-dasharray="4 4" rx="10" />
+    <text x="${(tripStartX + tripEndX) / 2}" y="${padT + 16}" text-anchor="middle" fill="#7c3aed" font-size="10.5" font-weight="800">
+      ✈️ NeurIPS + NZ + Reef (3 Wks)
     </text>
   `;
 
-  // Projected path
+  // Projected Path + Area
   const projPath = projPoints
     .map((p, i) => `${i === 0 ? 'M' : 'L'} ${xOf(p.t).toFixed(1)} ${yOf(p.val).toFixed(1)}`)
     .join(' ');
 
-  // Actual path
+  const projArea = `${projPath} L ${xOf(projPoints[projPoints.length - 1].t).toFixed(1)} ${H - padB} L ${xOf(projPoints[0].t).toFixed(1)} ${H - padB} Z`;
+
+  // Actual Path
   const actualPath = actualPoints
     .map((p, i) => `${i === 0 ? 'M' : 'L'} ${xOf(p.t).toFixed(1)} ${yOf(p.val).toFixed(1)}`)
     .join(' ');
 
   const projDots = projPoints
     .map(
-      (p) => `
-      <circle cx="${xOf(p.t)}" cy="${yOf(p.val)}" r="4" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
-      <text x="${xOf(p.t)}" y="${H - 12}" text-anchor="middle" fill="#94a3b8" font-size="10">${p.date.slice(5)}</text>
+      (p, i) => `
+      <circle cx="${xOf(p.t)}" cy="${yOf(p.val)}" r="4.5" fill="#ffffff" stroke="#94a3b8" stroke-width="2.2"/>
+      <text x="${xOf(p.t)}" y="${H - 14}" text-anchor="middle" fill="#64748b" font-size="10.5" font-weight="700">${p.date.slice(5)} (${p.tag})</text>
+      ${
+        i > 0
+          ? `<text x="${xOf(p.t)}" y="${yOf(p.val) - 10}" text-anchor="middle" fill="#64748b" font-size="10.5" font-weight="700">${p.val}${cfg.unit}</text>`
+          : ''
+      }
     `
     )
     .join('');
+
+  // Render Actual Scan Dots + Leader-Line Callout Pills (Only First & Latest labeled cleanly to guarantee ZERO overlap!)
+  const firstPt = actualPoints[0];
+  const latestPt = actualPoints[actualPoints.length - 1];
 
   const actualDots = actualPoints
     .map(
-      (p, idx) => `
-      <circle cx="${xOf(p.t)}" cy="${yOf(p.val)}" r="6" fill="${cfg.color}" stroke="#090b10" stroke-width="2"/>
-      <text x="${xOf(p.t) + (idx === 0 ? 6 : 12)}" y="${yOf(p.val) - (idx === 0 ? 10 : -4)}"
-        fill="#f8fafc" font-size="11" font-weight="700">${p.val}${cfg.unit}</text>
+      (p) => `
+      <circle cx="${xOf(p.t)}" cy="${yOf(p.val)}" r="6" fill="${cfg.color}" stroke="#ffffff" stroke-width="2.5"/>
     `
     )
     .join('');
 
+  const calloutBadges = `
+    <!-- Latest Scan Callout Pill -->
+    <g transform="translate(${xOf(latestPt.t) + 14}, ${yOf(latestPt.val) - 12})">
+      <rect x="0" y="0" width="128" height="24" rx="8" fill="${cfg.color}" />
+      <text x="64" y="16" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">
+        ${latestPt.date.slice(5)}: ${latestPt.val}${cfg.unit}
+      </text>
+    </g>
+  `;
+
   const svg = `
     <svg viewBox="0 0 ${W} ${H}" width="100%" height="100%">
+      <defs>
+        <linearGradient id="chartAreaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="${cfg.gradStart}" />
+          <stop offset="100%" stop-color="${cfg.gradEnd}" />
+        </linearGradient>
+      </defs>
       ${gridSvg}
       ${tripBandSvg}
-      <path d="${projPath}" fill="none" stroke="rgba(148, 163, 184, 0.45)" stroke-width="2.2" stroke-dasharray="6 5"/>
-      <path d="${actualPath}" fill="none" stroke="${cfg.color}" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="${projArea}" fill="url(#chartAreaGrad)" />
+      <path d="${projPath}" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="6 5"/>
+      <path d="${actualPath}" fill="none" stroke="${cfg.color}" stroke-width="4" stroke-linecap="round"/>
       ${projDots}
       ${actualDots}
+      ${calloutBadges}
     </svg>
   `;
 
   document.getElementById('trajectory-chart').innerHTML = svg;
-}
-
-function renderSegmentalBodyMap(first, latest) {
-  const isFat = state.segmentMode === 'fat';
-  const segKeys = [
-    { key: 'trunk', name: 'Trunk (Core / Belly)' },
-    { key: 'leftArm', name: 'Left Arm' },
-    { key: 'rightArm', name: 'Right Arm' },
-    { key: 'leftLeg', name: 'Left Leg' },
-    { key: 'rightLeg', name: 'Right Leg' }
-  ];
-
-  // Update body SVG labels
-  segKeys.forEach(({ key }) => {
-    const cur = latest.segments[key];
-    const base = first.segments[key];
-    const val = isFat ? cur.fatKg : cur.muscleKg;
-    const diff = isFat ? cur.fatKg - base.fatKg : cur.muscleKg - base.muscleKg;
-    const labelEl = document.getElementById(`svg-label-${key}`);
-    if (labelEl) {
-      labelEl.textContent = `${val.toFixed(2)}kg (${formatSigned(diff, 2)})`;
-    }
-  });
-
-  // Render list
-  const listEl = document.getElementById('segment-list');
-  listEl.innerHTML = segKeys
-    .map(({ key, name }) => {
-      const cur = latest.segments[key];
-      const base = first.segments[key];
-      const val = isFat ? cur.fatKg : cur.muscleKg;
-      const diff = isFat ? cur.fatKg - base.fatKg : cur.muscleKg - base.muscleKg;
-      const evalPct = isFat ? cur.fatEval : cur.muscleEval;
-      const barColor = isFat
-        ? key === 'trunk'
-          ? 'var(--accent-amber)'
-          : 'var(--accent-cyan)'
-        : 'var(--accent-emerald)';
-      const barWidth = isFat ? Math.min(100, (evalPct / 300) * 100) : Math.min(100, evalPct);
-
-      const deltaColor = isFat
-        ? diff <= 0
-          ? 'delta-positive'
-          : 'delta-negative'
-        : diff >= -0.05
-        ? 'delta-positive'
-        : 'delta-negative';
-
-      return `
-        <div class="segment-row ${state.selectedSegment === key ? 'active' : ''}" data-seg="${key}">
-          <div class="segment-row-top">
-            <span>${name}</span>
-            <span>${val.toFixed(2)} kg <small class="${deltaColor}">(${formatSigned(diff, 2)} kg)</small></span>
-          </div>
-          <div class="segment-row-sub">
-            <span>Standard Ratio: ${evalPct.toFixed(1)}%</span>
-            <span>${isFat ? (evalPct > 160 ? 'Over (Burning Fast)' : 'Normal') : 'Sufficient / Strong'}</span>
-          </div>
-          <div class="mini-progress">
-            <div class="mini-progress-bar" style="width:${barWidth}%; background:${barColor};"></div>
-          </div>
-        </div>
-      `;
-    })
-    .join('');
 }
 
 function renderScanTable(first) {
@@ -501,17 +596,18 @@ function renderScanTable(first) {
     .map((s) => {
       const wDelta = s.weight - first.weight;
       const fDelta = s.fatMass - first.fatMass;
+      const mPctDelta = s.skeletalMusclePct - first.skeletalMusclePct;
       return `
         <tr>
-          <td><strong>${s.date}</strong> <span style="color:var(--text-muted);font-size:0.76rem;">${s.time || ''}</span></td>
-          <td><strong>${s.weight.toFixed(2)} kg</strong> <span class="${wDelta <= 0 ? 'delta-positive' : 'delta-negative'}" style="font-size:0.78rem;">(${formatSigned(wDelta, 2)})</span></td>
-          <td><strong>${s.fatMass.toFixed(2)} kg</strong> <span class="${fDelta <= 0 ? 'delta-positive' : 'delta-negative'}" style="font-size:0.78rem;">(${formatSigned(fDelta, 2)})</span></td>
-          <td>${s.pbf.toFixed(1)}%</td>
-          <td><span class="tag-good" style="padding:3px 8px;border-radius:6px;font-weight:700;">${s.skeletalMuscle.toFixed(1)} kg (${s.skeletalMusclePct.toFixed(1)}%)</span></td>
-          <td>${s.segments.trunk.fatKg.toFixed(2)} kg</td>
-          <td>${s.proteinKg.toFixed(1)} kg</td>
-          <td>${s.bodyWater.toFixed(1)} L</td>
-          <td><strong>${s.fitnessScore.toFixed(1)}</strong></td>
+          <td><strong>${s.date}</strong> <span style="color:var(--text-muted);font-size:0.76rem;font-weight:600;">${s.time || ''}</span></td>
+          <td><strong>${s.weight.toFixed(2)} kg</strong> <span class="kpi-delta ${wDelta <= 0 ? 'delta-positive' : 'delta-negative'}" style="margin:0 0 0 4px;">${formatSigned(wDelta, 2)}</span></td>
+          <td><strong>${s.fatMass.toFixed(2)} kg</strong> <span class="kpi-delta ${fDelta <= 0 ? 'delta-positive' : 'delta-negative'}" style="margin:0 0 0 4px;">${formatSigned(fDelta, 2)}</span></td>
+          <td><strong>${s.pbf.toFixed(1)}%</strong></td>
+          <td><strong>${s.skeletalMuscle.toFixed(1)} kg</strong></td>
+          <td><span class="kpi-delta delta-positive" style="margin:0;">${s.skeletalMusclePct.toFixed(1)}% (${formatSigned(mPctDelta, 1, '%')})</span></td>
+          <td><strong>${s.segments.trunk.fatKg.toFixed(2)} kg</strong></td>
+          <td>${s.bodyWater.toFixed(1)} L (${s.bodyWaterPct.toFixed(1)}%)</td>
+          <td><strong style="color:var(--blue);">${s.fitnessScore.toFixed(1)} / 100</strong></td>
         </tr>
       `;
     })
@@ -523,15 +619,14 @@ function updateCalculator() {
   const watchKcal = Number(document.getElementById('calc-watch-kcal').value) || 0;
   const intakeKcal = Number(document.getElementById('calc-intake-kcal').value) || 1800;
 
-  // Base non-workout burn (BMR 1884 + TEF ~180 + baseline steps/NEAT)
   const baseBurnMap = {
-    wfh: 2220, // WFH sedentary researcher baseline
-    office: 2500, // Office day with 1h walking
-    travel: 2650 // Australia / NZ / GBR high step day
+    wfh: 2220,
+    office: 2500,
+    travel: 2650
   };
 
   const baseBurn = baseBurnMap[dayType] || 2220;
-  const realWorkoutBurn = Math.round(watchKcal * 0.7); // 70% Rule for Apple Watch Series 6
+  const realWorkoutBurn = Math.round(watchKcal * 0.7);
   const totalTDEE = baseBurn + realWorkoutBurn;
   const deficit = totalTDEE - intakeKcal;
   const fatBurnedGrams = Math.round((deficit / 7700) * 1000);
@@ -543,14 +638,13 @@ function updateCalculator() {
   document.getElementById('calc-fat-grams').textContent =
     deficit >= 0 ? `≈ ${fatBurnedGrams}g pure fat burned today` : `Above maintenance`;
 
-  // Suggested carbs adjustment if deficit is huge (>950 kcal)
   const adviceEl = document.getElementById('calc-sleep-advice');
   if (deficit > 950) {
     adviceEl.innerHTML = `⚠️ <strong>High Deficit Alert (${deficit} kcal):</strong> Eat an extra <strong>150–200 kcal (40g carbs)</strong> 1 hour before bed tonight so your liver glycogen doesn't run out after 6 hours of sleep!`;
-    adviceEl.style.color = '#fbbf24';
+    adviceEl.style.color = '#d97706';
   } else {
     adviceEl.innerHTML = `✅ <strong>Sweet-Spot Deficit:</strong> Save ~35–40g of your daily carbs for dinner/pre-bed to guarantee 7.5–8h of deep sleep and full muscle recovery.`;
-    adviceEl.style.color = '#94a3b8';
+    adviceEl.style.color = '#059669';
   }
 }
 
@@ -571,9 +665,33 @@ function setupEventListeners() {
       document.querySelectorAll('[data-seg-mode]').forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       state.segmentMode = btn.getAttribute('data-seg-mode');
-      renderSegmentalBodyMap(state.scans[0], state.scans[state.scans.length - 1]);
+      render3DBodyStudio(state.scans[0], state.scans[state.scans.length - 1]);
     });
   });
+
+  // 3D Time-Machine Morph Slider
+  const morphSlider = document.getElementById('morph-slider');
+  if (morphSlider) {
+    morphSlider.addEventListener('input', () => {
+      state.morphPct = Number(morphSlider.value) || 0;
+      render3DBodyStudio(state.scans[0], state.scans[state.scans.length - 1]);
+    });
+  }
+
+  // Interactive 3D Tilt on the Human Studio Stage
+  const stage = document.getElementById('human-3d-stage');
+  const rotator = document.getElementById('mannequin-rotator');
+  if (stage && rotator) {
+    stage.addEventListener('mousemove', (e) => {
+      const rect = stage.getBoundingClientRect();
+      const xRel = (e.clientX - rect.left) / rect.width - 0.5;
+      const yRel = (e.clientY - rect.top) / rect.height - 0.5;
+      rotator.style.transform = `rotateY(${(xRel * 24).toFixed(1)}deg) rotateX(${(-yRel * 12).toFixed(1)}deg) scale(1.02)`;
+    });
+    stage.addEventListener('mouseleave', () => {
+      rotator.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  }
 
   // Calculator inputs
   ['calc-day-type', 'calc-watch-kcal', 'calc-intake-kcal'].forEach((id) => {
@@ -634,7 +752,6 @@ function setupEventListeners() {
     };
     newScan.segments.trunk.fatKg = trunkFat;
 
-    // Replace if same date or push
     const existingIdx = state.scans.findIndex((s) => s.date === date);
     if (existingIdx >= 0) {
       state.scans[existingIdx] = newScan;
@@ -667,7 +784,7 @@ function setupEventListeners() {
       try {
         await navigator.clipboard.writeText(shareUrl);
         const orig = shareBtn.textContent;
-        shareBtn.textContent = '✅ Authorized Link Copied!';
+        shareBtn.textContent = '✅ Link Copied!';
         setTimeout(() => {
           shareBtn.textContent = orig;
         }, 2500);
@@ -710,13 +827,11 @@ function setupAuthGate() {
     document.body.classList.remove('locked');
     if (overlay) overlay.classList.add('hidden');
     if (errorEl) errorEl.textContent = '';
-    // Clean URL if unlocked via ?auth=7777
     if (window.location.search.includes('auth=')) {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   }
 
-  // Check URL magic link (?auth=7777) or saved device authorization
   const params = new URLSearchParams(window.location.search);
   let savedAuth = null;
   try {

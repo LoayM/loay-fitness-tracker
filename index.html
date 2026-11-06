@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Loay Recomp" />
-  <meta name="theme-color" content="#090b10" />
-  <title>Loay Mualem • Body Recomposition & Performance Lab</title>
+  <meta name="theme-color" content="#f4f7fb" />
+  <title>Loay Mualem • 3D Body Recomposition & Performance Studio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="locked">
@@ -15,9 +15,9 @@
   <div class="auth-overlay" id="auth-overlay">
     <div class="auth-card">
       <div class="auth-lock-icon">🔒</div>
-      <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">Private Performance Lab</h2>
-      <p style="font-size:0.86rem;color:var(--text-secondary);">
-        Enter your 4-digit access PIN to view Loay’s body recomposition dashboard.
+      <h2 style="font-size:1.35rem;font-weight:800;margin-bottom:6px;color:var(--text-main);">Private Performance Studio</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);">
+        Enter your 4-digit access PIN to unlock Loay’s 3D body recomposition dashboard.
       </p>
       <form id="auth-form">
         <input
@@ -32,12 +32,12 @@
           autofocus
         />
         <div class="auth-error" id="auth-error"></div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px;">
-          Unlock Dashboard
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;font-size:0.92rem;">
+          Unlock Studio
         </button>
       </form>
-      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:14px;">
-        Your device stays remembered once unlocked.
+      <p style="font-size:0.76rem;color:var(--text-muted);margin-top:14px;">
+        Your iPhone & Mac stay remembered once unlocked.
       </p>
     </div>
   </div>
@@ -50,155 +50,274 @@
         <div class="profile-title">
           <h1>
             Loay Mualem
-            <span class="status-pill">Recomp Active • Week 1</span>
+            <span class="status-pill">🔥 On Fire • -1.10 kg in 4 Days</span>
           </h1>
           <div class="profile-meta">
             <span>📏 179 cm</span>
             <span>🎂 Age 31</span>
-            <span>🏋️ Power Training 4–6x/wk</span>
-            <span>🎯 Goal: 82.65 kg (~15% BF, 100% Muscle Retention)</span>
+            <span>💪 48.9% Skeletal Muscle (All-Time High)</span>
+            <span>🎯 Goal: 82.65 kg (~15% Athletic BF)</span>
           </div>
         </div>
       </div>
       <div class="header-actions">
-        <button class="btn" id="share-access-btn" title="Copy a magic link that automatically unlocks the site for someone you trust">🔗 Copy Authorized Link</button>
-        <button class="btn" id="export-json-btn">⬇ Export Data</button>
+        <button class="btn" id="share-access-btn" title="Copy a magic link that automatically unlocks the site">🔗 Share Access</button>
+        <button class="btn" id="export-json-btn">⬇ Export JSON</button>
         <button class="btn btn-primary" id="open-scan-modal-btn">＋ Log New Arboleaf Scan</button>
-        <button class="btn" id="lock-dashboard-btn" title="Lock dashboard on this device">🔒</button>
+        <button class="btn" id="lock-dashboard-btn" title="Lock studio on this device">🔒</button>
       </div>
     </header>
 
-    <!-- Goal Progress Banner -->
-    <section class="goal-banner">
-      <div class="goal-summary">
-        <h2>90-Day Body Recomposition Progress</h2>
-        <p>Stripping 10.9 kg of fat while preserving 45.3 kg Skeletal Muscle via muscle memory & 180g daily protein.</p>
+    <!-- Motivational Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-summary">
+        <h2>90-Day Athletic Transformation</h2>
+        <p>Melting 10.9 kg of pure fat while unlocking your pre-2022 heavy-lifting muscle memory on 180g daily protein.</p>
       </div>
-      <div class="goal-progress-wrap">
+      <div class="hero-progress-wrap">
         <div class="goal-bar-labels">
-          <span id="goal-progress-pct">2.7% Complete</span>
-          <span id="goal-progress-detail">0.29 kg pure fat burned of 10.9 kg goal</span>
+          <span id="goal-progress-pct" style="color:var(--blue);">6.7% Fat Goal Complete</span>
+          <span id="goal-progress-detail" style="color:var(--emerald);">0.73 kg pure fat burned • -1.10 kg scale weight</span>
         </div>
         <div class="goal-bar-track">
-          <div class="goal-bar-fill" id="goal-bar-fill" style="width: 3%;"></div>
+          <div class="goal-bar-fill" id="goal-bar-fill" style="width: 7%;"></div>
+        </div>
+        <div class="goal-milestones">
+          <span>Start: 93.55 kg (24.9% BF)</span>
+          <span>Now: <strong id="banner-now-weight" style="color:var(--text-main);">92.45 kg (24.4% BF)</strong></span>
+          <span>Goal: 82.65 kg (15.0% BF)</span>
         </div>
       </div>
       <div class="goal-pace-box">
-        <div class="pace-label">Measured Fat Loss Pace</div>
-        <div class="pace-val" id="pace-val">-0.68 kg/wk</div>
-        <div class="pace-sub" id="pace-sub">~2.9 kg pure fat/mo • ~744 kcal/day deficit</div>
+        <div class="pace-label">Verified Fat Burn Velocity</div>
+        <div class="pace-val" id="pace-val">-1.28 kg / wk</div>
+        <div class="pace-sub" id="pace-sub">~182g pure fat/day • 100% Muscle Kept</div>
       </div>
     </section>
 
-    <!-- 5 KPI Cards -->
+    <!-- 5 3D Ring KPI Cards -->
     <section class="kpi-grid" id="kpi-grid"></section>
 
-    <!-- Main Charts + Anatomical Segment Map -->
-    <section class="dashboard-grid">
-      <!-- Trajectory Chart -->
+    <!-- Main Showcase: 3D Anatomical Body Studio + Smooth Trajectory Chart -->
+    <section class="showcase-grid">
+      <!-- 3D Anatomical Segmental Studio -->
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">📈 90-Day Trajectory vs. Measured Scans</div>
-            <div class="card-subtitle">Actual Arboleaf CS10P readings vs. 3-Month Target Curve (including Dec Australia/NZ/GBR trip)</div>
+            <div class="card-title">🧍‍♂️ 3D Anatomical Body Composition Studio</div>
+            <div class="card-subtitle">Zero-overlap HUD callouts • Drag the Time-Machine slider below to preview your 82.65 kg physique!</div>
           </div>
           <div class="pill-tabs">
-            <button class="pill-tab active" data-chart-metric="weight">Weight</button>
-            <button class="pill-tab" data-chart-metric="fatMass">Fat (kg)</button>
-            <button class="pill-tab" data-chart-metric="pbf">Body Fat %</button>
-            <button class="pill-tab" data-chart-metric="skeletalMuscle">Muscle (kg)</button>
+            <button class="pill-tab active" data-seg-mode="muscle">💪 Muscle % & Mass</button>
+            <button class="pill-tab" data-seg-mode="fat">🔥 Fat Burn Map</button>
           </div>
         </div>
-        <div class="chart-box" id="trajectory-chart"></div>
-        <div class="chart-legend">
-          <span class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Actual Measured Scans</span>
-          <span class="legend-item"><span class="legend-dot" style="background:#64748b;"></span> Projected 90-Day Path to 82.65 kg</span>
-          <span class="legend-item"><span class="legend-dot" style="background:#8b5cf6;"></span> Dec 1–22: NeurIPS (Sydney) + NZ + Great Barrier Reef</span>
+
+        <div class="human-3d-stage" id="human-3d-stage">
+          <div class="stage-layout">
+            <!-- Left Callouts (Viewer's Left = Anatomical Right Side) -->
+            <div class="callout-col" id="callouts-left"></div>
+
+            <!-- Center 3D Sculpted Mannequin -->
+            <div class="mannequin-center">
+              <div class="mannequin-3d-rotator" id="mannequin-rotator">
+                <svg viewBox="0 0 240 430" width="215" height="380" id="human-3d-svg">
+                  <defs>
+                    <!-- 3D Volumetric Gradients -->
+                    <radialGradient id="headGrad" cx="42%" cy="35%" r="65%">
+                      <stop offset="0%" stop-color="#f8fafc" />
+                      <stop offset="55%" stop-color="#cbd5e1" />
+                      <stop offset="100%" stop-color="#64748b" />
+                    </radialGradient>
+
+                    <linearGradient id="muscleTorsoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#34d399" />
+                      <stop offset="48%" stop-color="#10b981" />
+                      <stop offset="100%" stop-color="#047857" />
+                    </linearGradient>
+
+                    <linearGradient id="fatTorsoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fbbf24" />
+                      <stop offset="50%" stop-color="#f59e0b" />
+                      <stop offset="100%" stop-color="#d97706" />
+                    </linearGradient>
+
+                    <linearGradient id="limbMuscleGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+                      <stop offset="0%" stop-color="#60a5fa" />
+                      <stop offset="50%" stop-color="#2563eb" />
+                      <stop offset="100%" stop-color="#1d4ed8" />
+                    </linearGradient>
+
+                    <linearGradient id="legMuscleGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+                      <stop offset="0%" stop-color="#34d399" />
+                      <stop offset="55%" stop-color="#059669" />
+                      <stop offset="100%" stop-color="#065f46" />
+                    </linearGradient>
+
+                    <radialGradient id="specularGlow" cx="35%" cy="28%" r="55%">
+                      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
+                      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+                    </radialGradient>
+
+                    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+
+                  <!-- 3D Pedestal Ring -->
+                  <ellipse cx="120" cy="406" rx="74" ry="14" fill="rgba(37, 99, 235, 0.10)" stroke="rgba(37, 99, 235, 0.35)" stroke-width="1.5" />
+                  <ellipse cx="120" cy="406" rx="48" ry="8" fill="rgba(16, 185, 129, 0.18)" />
+
+                  <!-- Head & Neck -->
+                  <rect x="109" y="54" width="22" height="20" rx="6" fill="url(#headGrad)" />
+                  <circle cx="120" cy="34" r="23" fill="url(#headGrad)" stroke="#94a3b8" stroke-width="1.2" />
+                  <ellipse cx="113" cy="27" rx="10" ry="7" fill="url(#specularGlow)" />
+
+                  <!-- RIGHT ARM (Viewer's Left) -->
+                  <g id="svg-3d-rightArm">
+                    <!-- Deltoid + Bicep + Forearm Sculpt -->
+                    <path d="M 68 74 C 46 76, 36 94, 34 122 C 32 146, 27 174, 25 196 C 24 205, 36 208, 41 198 C 47 178, 54 152, 60 128 C 64 112, 70 92, 72 78 Z"
+                      fill="url(#limbMuscleGrad)" stroke="#ffffff" stroke-width="1.5" />
+                    <path d="M 58 80 C 46 86, 40 106, 38 126" stroke="rgba(255,255,255,0.45)" stroke-width="3" stroke-linecap="round" fill="none" />
+                  </g>
+
+                  <!-- LEFT ARM (Viewer's Right) -->
+                  <g id="svg-3d-leftArm">
+                    <path d="M 172 74 C 194 76, 204 94, 206 122 C 208 146, 213 174, 215 196 C 216 205, 204 208, 199 198 C 193 178, 186 152, 180 128 C 176 112, 170 92, 168 78 Z"
+                      fill="url(#limbMuscleGrad)" stroke="#ffffff" stroke-width="1.5" />
+                    <path d="M 182 80 C 194 86, 200 106, 202 126" stroke="rgba(255,255,255,0.45)" stroke-width="3" stroke-linecap="round" fill="none" />
+                  </g>
+
+                  <!-- TRUNK / TORSO (Dynamic Waist Morphing Path!) -->
+                  <g id="svg-3d-trunk">
+                    <path id="torso-3d-path"
+                      d="M 68 72 Q 120 64 172 72 C 178 102, 166 135, 162 165 C 160 184, 158 202, 154 214 Q 120 224 86 214 C 82 202, 80 184, 78 165 C 74 135, 62 102, 68 72 Z"
+                      fill="url(#muscleTorsoGrad)" stroke="#ffffff" stroke-width="2" />
+
+                    <!-- 3D Pectoral & Ab Definition Lines -->
+                    <path d="M 76 108 Q 100 118 118 108 M 164 108 Q 140 118 122 108" stroke="rgba(255,255,255,0.55)" stroke-width="2.2" fill="none" stroke-linecap="round" />
+                    <line x1="120" y1="108" x2="120" y2="198" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                    <g id="abs-definition" opacity="0.45">
+                      <path d="M 98 134 Q 120 138 142 134" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" />
+                      <path d="M 96 156 Q 120 160 144 156" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" />
+                      <path d="M 98 178 Q 120 182 142 178" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" />
+                    </g>
+                    <!-- Specular Chest Highlight -->
+                    <ellipse cx="102" cy="94" rx="18" ry="10" fill="url(#specularGlow)" />
+                    <ellipse cx="138" cy="94" rx="18" ry="10" fill="url(#specularGlow)" />
+                  </g>
+
+                  <!-- RIGHT LEG (Viewer's Left) -->
+                  <g id="svg-3d-rightLeg">
+                    <path d="M 84 212 C 74 248, 72 286, 76 322 C 78 348, 82 374, 84 396 C 85 403, 99 403, 101 395 C 105 370, 108 345, 110 320 C 113 285, 116 248, 117 218 Z"
+                      fill="url(#legMuscleGrad)" stroke="#ffffff" stroke-width="1.6" />
+                    <path d="M 90 228 C 84 260, 84 295, 88 330" stroke="rgba(255,255,255,0.45)" stroke-width="3.2" stroke-linecap="round" fill="none" />
+                  </g>
+
+                  <!-- LEFT LEG (Viewer's Right) -->
+                  <g id="svg-3d-leftLeg">
+                    <path d="M 156 212 C 166 248, 168 286, 164 322 C 162 348, 158 374, 156 396 C 155 403, 141 403, 139 395 C 135 370, 132 345, 130 320 C 127 285, 124 248, 123 218 Z"
+                      fill="url(#legMuscleGrad)" stroke="#ffffff" stroke-width="1.6" />
+                    <path d="M 150 228 C 156 260, 156 295, 152 330" stroke="rgba(255,255,255,0.45)" stroke-width="3.2" stroke-linecap="round" fill="none" />
+                  </g>
+
+                  <!-- Glowing Connector Nodes (No Overlapping Text!) -->
+                  <circle cx="48" cy="128" r="4.5" fill="#ffffff" stroke="#2563eb" stroke-width="2.5" />
+                  <circle cx="192" cy="128" r="4.5" fill="#ffffff" stroke="#2563eb" stroke-width="2.5" />
+                  <circle cx="120" cy="148" r="5.5" fill="#ffffff" stroke="#f59e0b" stroke-width="3" />
+                  <circle cx="94" cy="296" r="4.5" fill="#ffffff" stroke="#059669" stroke-width="2.5" />
+                  <circle cx="146" cy="296" r="4.5" fill="#ffffff" stroke="#059669" stroke-width="2.5" />
+                </svg>
+              </div>
+              <div id="mannequin-stage-caption" style="font-size:0.78rem;font-weight:800;color:var(--blue);text-align:center;margin-top:2px;">
+                Live Scan: 92.45 kg • 48.9% Skeletal Muscle
+              </div>
+            </div>
+
+            <!-- Right Callouts (Viewer's Right = Trunk + Left Side) -->
+            <div class="callout-col" id="callouts-right"></div>
+          </div>
+
+          <!-- Interactive 3D Time-Machine Morph Slider -->
+          <div class="morph-control-bar">
+            <div class="morph-header">
+              <span>✨ 3D Physique Time-Machine (Preview Your 82.65 kg V-Taper!)</span>
+              <span id="morph-status-label" style="color:var(--emerald);">Current (Nov 6): 92.45 kg • 24.4% BF</span>
+            </div>
+            <input type="range" id="morph-slider" class="morph-slider" min="0" max="100" value="0" />
+            <div style="display:flex;justify-content:space-between;font-size:0.72rem;font-weight:700;color:var(--text-muted);">
+              <span>Today (92.45 kg)</span>
+              <span>Dec 1 Sydney (89.5 kg)</span>
+              <span>Jan 1 (86.5 kg)</span>
+              <span>🎯 Feb 5 Goal (82.65 kg • 15% BF)</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Segmental Body Map -->
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">🧬 8-Electrode Segmental Analysis</div>
-            <div class="card-subtitle">Change from Nov 2 Baseline → Latest Scan</div>
+      <!-- Smooth Gradient Trajectory Chart -->
+      <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="card-header">
+            <div>
+              <div class="card-title">📈 90-Day Transformation Curve</div>
+              <div class="card-subtitle">Measured Arboleaf CS10P scans vs. 3-Month Target Trajectory</div>
+            </div>
+            <div class="pill-tabs">
+              <button class="pill-tab active" data-chart-metric="weight">Weight</button>
+              <button class="pill-tab" data-chart-metric="fatMass">Fat (kg)</button>
+              <button class="pill-tab" data-chart-metric="pbf">Body Fat %</button>
+              <button class="pill-tab" data-chart-metric="skeletalMusclePct">Muscle %</button>
+            </div>
           </div>
-          <div class="pill-tabs">
-            <button class="pill-tab active" data-seg-mode="fat">Fat Mass</button>
-            <button class="pill-tab" data-seg-mode="muscle">Lean Muscle</button>
+
+          <div class="chart-box" id="trajectory-chart"></div>
+
+          <div class="chart-legend">
+            <span class="legend-item"><span class="legend-dot" style="background:#2563eb;"></span> Measured Arboleaf Scans</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#94a3b8;"></span> 90-Day Target Path</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#8b5cf6;"></span> Dec 1–22: NeurIPS (Sydney) + NZ + Great Barrier Reef</span>
           </div>
         </div>
 
-        <div class="body-map-wrapper">
-          <!-- Anatomical Stylized SVG -->
-          <div class="body-svg-container">
-            <svg viewBox="0 0 220 360" width="185" height="310">
-              <!-- Head -->
-              <circle cx="110" cy="34" r="22" fill="#1e293b" stroke="#475569" stroke-width="2" />
-              <!-- Trunk -->
-              <rect id="svg-part-trunk" class="segment-part" x="72" y="64" width="76" height="122" rx="16"
-                fill="rgba(245, 158, 11, 0.25)" stroke="#f59e0b" stroke-width="2.2" />
-              <text x="110" y="118" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700">TRUNK</text>
-              <text id="svg-label-trunk" x="110" y="135" text-anchor="middle" fill="#fde68a" font-size="10" font-weight="700">12.64kg (-0.16)</text>
-
-              <!-- Left Arm (Viewer's Left = Right Arm, Viewer's Right = Left Arm; labeled clearly) -->
-              <rect class="segment-part" x="32" y="68" width="32" height="106" rx="14"
-                fill="rgba(56, 189, 248, 0.18)" stroke="#38bdf8" stroke-width="1.8" />
-              <text x="48" y="116" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">L. ARM</text>
-              <text id="svg-label-leftArm" x="48" y="130" text-anchor="middle" fill="#38bdf8" font-size="8.5" font-weight="700">1.65kg</text>
-
-              <!-- Right Arm -->
-              <rect class="segment-part" x="156" y="68" width="32" height="106" rx="14"
-                fill="rgba(56, 189, 248, 0.18)" stroke="#38bdf8" stroke-width="1.8" />
-              <text x="172" y="116" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">R. ARM</text>
-              <text id="svg-label-rightArm" x="172" y="130" text-anchor="middle" fill="#38bdf8" font-size="8.5" font-weight="700">1.70kg</text>
-
-              <!-- Left Leg -->
-              <rect class="segment-part" x="74" y="194" width="33" height="145" rx="15"
-                fill="rgba(16, 185, 129, 0.18)" stroke="#10b981" stroke-width="1.8" />
-              <text x="90" y="260" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">L. LEG</text>
-              <text id="svg-label-leftLeg" x="90" y="275" text-anchor="middle" fill="#6ee7b7" font-size="8.5" font-weight="700">3.27kg</text>
-
-              <!-- Right Leg -->
-              <rect class="segment-part" x="113" y="194" width="33" height="145" rx="15"
-                fill="rgba(16, 185, 129, 0.18)" stroke="#10b981" stroke-width="1.8" />
-              <text x="130" y="260" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">R. LEG</text>
-              <text id="svg-label-rightLeg" x="130" y="275" text-anchor="middle" fill="#6ee7b7" font-size="8.5" font-weight="700">3.28kg</text>
-            </svg>
+        <!-- Quick Win Highlight Strip -->
+        <div style="margin-top:18px;background:linear-gradient(135deg,#ecfdf5,#eff6ff);border:1px solid rgba(16,185,129,0.28);border-radius:16px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="font-size:0.74rem;font-weight:800;text-transform:uppercase;color:var(--emerald);">🏆 4-Day Momentum Check (Nov 2 → Nov 6)</div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--text-main);margin-top:2px;">
+              You burned <strong>730g of pure fat</strong> (400g straight off your belly) while your <strong>Skeletal Muscle % jumped from 48.4% → 48.9%!</strong>
+            </div>
           </div>
-
-          <!-- Segment Breakdown List -->
-          <div class="segment-list" id="segment-list"></div>
+          <div style="font-size:1.35rem;font-weight:800;color:var(--emerald);">69.7 <small style="font-size:0.75rem;color:var(--text-secondary);">/100 Score</small></div>
         </div>
       </div>
     </section>
 
-    <!-- Second Row: Daily Fuel & Apple Watch 70% Calculator + 3-Month Roadmap -->
+    <!-- Second Row: Daily Fuel & Apple Watch 70% Calculator + 4-Phase Roadmap -->
     <section class="split-grid">
-      <!-- Daily Nutrition & Apple Watch Series 6 Calculator -->
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">🔥 Daily Deficit & Apple Watch Series 6 Calculator</div>
-            <div class="card-subtitle">Automatically applies the 70% lab-accuracy correction to your watch's active calories</div>
+            <div class="card-title">⚡ Daily Fuel & Apple Watch Series 6 Calculator</div>
+            <div class="card-subtitle">Automatically applies the 70% lab correction to your watch's active workout calories</div>
           </div>
         </div>
 
         <div class="macro-rings">
           <div class="macro-box">
-            <div class="m-name">Protein Target</div>
-            <div class="m-grams" style="color:var(--accent-emerald);">180g</div>
-            <div class="m-kcal">720 kcal (2.56g/kg LBM)</div>
+            <div class="m-name">Daily Protein</div>
+            <div class="m-grams" style="color:var(--emerald);">180g</div>
+            <div class="m-kcal">720 kcal (Muscle Shield)</div>
           </div>
           <div class="macro-box">
-            <div class="m-name">Workout Carbs</div>
-            <div class="m-grams" style="color:var(--accent-cyan);">130–160g</div>
+            <div class="m-name">Smart Carbs</div>
+            <div class="m-grams" style="color:var(--blue);">130–160g</div>
             <div class="m-kcal">Save 40g for 1h pre-bed</div>
           </div>
           <div class="macro-box">
             <div class="m-name">Healthy Fats</div>
-            <div class="m-grams" style="color:var(--accent-amber);">60–65g</div>
+            <div class="m-grams" style="color:var(--orange);">60–65g</div>
             <div class="m-kcal">Hormone & brain support</div>
           </div>
         </div>
@@ -216,9 +335,9 @@
             <label for="calc-watch-kcal">2. Apple Watch Active Workout kcal (Gym / Football):</label>
             <input type="number" id="calc-watch-kcal" value="430" min="0" max="2500" step="10" style="width:120px;" />
           </div>
-          <div class="control-row" style="font-size:0.78rem;color:var(--text-secondary);">
+          <div class="control-row" style="font-size:0.8rem;color:var(--text-secondary);">
             <span>True Net Workout Burn (70% Rule):</span>
-            <strong id="watch-adjusted-val" style="color:var(--accent-cyan);">301 kcal (70% of 430)</strong>
+            <strong id="watch-adjusted-val" style="color:var(--blue);">301 kcal (70% of 430)</strong>
           </div>
           <div class="control-row">
             <label for="calc-intake-kcal">3. Planned Food Intake Today (kcal):</label>
@@ -227,24 +346,24 @@
 
           <div class="calc-result-banner">
             <div>
-              <div style="font-size:0.75rem;color:var(--text-secondary);text-transform:uppercase;">Estimated Total Daily Burn (TDEE)</div>
-              <div id="calc-tdee-val" style="font-size:1.3rem;font-weight:800;">2,521 kcal</div>
+              <div style="font-size:0.74rem;font-weight:800;color:var(--text-secondary);text-transform:uppercase;">Estimated Total Daily Burn (TDEE)</div>
+              <div id="calc-tdee-val" style="font-size:1.4rem;font-weight:800;color:var(--text-main);">2,521 kcal</div>
             </div>
             <div style="text-align:right;">
-              <div id="calc-deficit-val" style="font-size:1.25rem;font-weight:800;color:var(--accent-emerald);">-721 kcal Deficit</div>
-              <div id="calc-fat-grams" style="font-size:0.78rem;color:var(--text-secondary);">≈ 94g pure fat burned today</div>
+              <div id="calc-deficit-val" style="font-size:1.3rem;font-weight:800;color:var(--emerald);">-721 kcal Deficit</div>
+              <div id="calc-fat-grams" style="font-size:0.8rem;font-weight:700;color:var(--text-secondary);">≈ 94g pure fat burned today</div>
             </div>
           </div>
 
-          <p id="calc-sleep-advice" style="font-size:0.8rem;line-height:1.45;margin-top:4px;"></p>
+          <p id="calc-sleep-advice" style="font-size:0.82rem;font-weight:600;line-height:1.45;margin-top:4px;"></p>
         </div>
       </div>
 
-      <!-- 4-Phase Roadmap (Including NeurIPS, NZ & GBR) -->
+      <!-- 4-Phase Roadmap -->
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">🌏 Your 4-Phase Recomposition Roadmap</div>
+            <div class="card-title">🌏 Your 4-Phase Transformation Roadmap</div>
             <div class="card-subtitle">Customized around NeurIPS (Sydney), New Zealand & Great Barrier Reef</div>
           </div>
         </div>
@@ -253,37 +372,37 @@
           <div class="roadmap-item">
             <div class="rm-date">Nov 2 – Nov 30<br/><span style="color:var(--text-muted);font-size:0.7rem;">Phase 1 (Home)</span></div>
             <div>
-              <div class="rm-title">Launch & Muscle Memory Re-Activation</div>
+              <div class="rm-title">🚀 Launch & Muscle Memory Re-Activation</div>
               <div class="rm-desc">1,800–1,950 kcal • 180g protein • 4–5x power lifting + football. Use 40g pre-bed carbs for 8h sleep.</div>
             </div>
-            <div class="rm-target">89.5 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">-4.0 kg</small></div>
+            <div class="rm-target">89.5 kg<br/><small style="font-size:0.74rem;color:var(--text-secondary);">-4.0 kg</small></div>
           </div>
 
-          <div class="roadmap-item" style="border-color:rgba(139, 92, 246, 0.4);">
-            <div class="rm-date" style="color:#c4b5fd;">Dec 1 – Dec 7<br/><span style="color:var(--text-muted);font-size:0.7rem;">Week 1 Trip</span></div>
+          <div class="roadmap-item" style="border-left: 4px solid var(--violet);">
+            <div class="rm-date" style="color:var(--violet);">Dec 1 – Dec 7<br/><span style="color:var(--text-muted);font-size:0.7rem;">Week 1 Trip</span></div>
             <div>
               <div class="rm-title">🇦🇺 NeurIPS Conference (Sydney)</div>
-              <div class="rm-desc">12k+ convention steps/day • 2x 30m hotel dumbbell workouts • Rokeby shake + Chobani Fit breakfast, skip break pastries.</div>
+              <div class="rm-desc">12k+ convention steps/day • 2x 30m hotel dumbbell workouts • Rokeby shake + Chobani Fit breakfast.</div>
             </div>
-            <div class="rm-target">89.0 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">2,100 kcal</small></div>
+            <div class="rm-target">89.0 kg<br/><small style="font-size:0.74rem;color:var(--text-secondary);">2,100 kcal</small></div>
           </div>
 
-          <div class="roadmap-item" style="border-color:rgba(56, 189, 248, 0.35);">
+          <div class="roadmap-item" style="border-left: 4px solid var(--blue);">
             <div class="rm-date">Dec 8 – Dec 22<br/><span style="color:var(--text-muted);font-size:0.7rem;">Weeks 2–3 Trip</span></div>
             <div>
               <div class="rm-title">🇳🇿 New Zealand Hikes + 🪸 Great Barrier Reef</div>
-              <div class="rm-desc">High natural burn (hiking 700+ kcal, ocean swimming 500 kcal/h) • 2x 20m bodyweight sessions/wk • Fresh reef fish & NZ steak.</div>
+              <div class="rm-desc">High outdoor burn (hiking 700+ kcal, ocean swimming 500 kcal/h) • 2x 20m room sessions/wk • Reef fish & NZ steak.</div>
             </div>
-            <div class="rm-target">88.0 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">2,250 kcal</small></div>
+            <div class="rm-target">88.0 kg<br/><small style="font-size:0.74rem;color:var(--text-secondary);">2,250 kcal</small></div>
           </div>
 
-          <div class="roadmap-item">
-            <div class="rm-date">Dec 23 – Feb 5<br/><span style="color:var(--text-muted);font-size:0.7rem;">Final Push</span></div>
+          <div class="roadmap-item" style="border-left: 4px solid var(--emerald);">
+            <div class="rm-date" style="color:var(--emerald);">Dec 23 – Feb 5<br/><span style="color:var(--text-muted);font-size:0.7rem;">Final Push</span></div>
             <div>
-              <div class="rm-title">🏁 Home Stretch to Athletic 15% Body Fat</div>
-              <div class="rm-desc">Return to 1,800–1,950 kcal + heavy gym split for 6 weeks to strip the final ~5 kg of fat while keeping 100% muscle.</div>
+              <div class="rm-title">🏆 Home Stretch to Athletic 15% Body Fat</div>
+              <div class="rm-desc">Return to 1,800–1,950 kcal + heavy gym split for 6 weeks to strip the final ~5 kg fat while keeping 100% muscle.</div>
             </div>
-            <div class="rm-target">82.65 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">~15% BF 🎯</small></div>
+            <div class="rm-target">82.65 kg<br/><small style="font-size:0.74rem;color:var(--text-secondary);">~15% BF 🎯</small></div>
           </div>
         </div>
       </div>
@@ -293,8 +412,8 @@
     <section class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">📋 Arboleaf CS10P Scan Log</div>
-          <div class="card-subtitle">Complete historical record of your morning fasted 8-electrode scans</div>
+          <div class="card-title">📋 Complete Arboleaf CS10P 8-Electrode Scan History</div>
+          <div class="card-subtitle">Every scan automatically compares against your Nov 2 baseline</div>
         </div>
       </div>
       <div class="table-wrap">
@@ -306,8 +425,8 @@
               <th>Body Fat Mass</th>
               <th>Body Fat %</th>
               <th>Skeletal Muscle</th>
+              <th>Muscle % Ratio</th>
               <th>Trunk (Belly) Fat</th>
-              <th>Protein Mass</th>
               <th>Body Water</th>
               <th>Fitness Score</th>
             </tr>
@@ -324,7 +443,7 @@
       <div class="card-header" style="margin-bottom:8px;">
         <div>
           <div class="card-title">＋ Log New Arboleaf CS10P Scan</div>
-          <div class="card-subtitle">Enter the numbers from your new report PDF to update all charts & projections</div>
+          <div class="card-subtitle">Enter the numbers from your report PDF to update all 3D models & charts</div>
         </div>
       </div>
       <form id="add-scan-form">
@@ -368,7 +487,7 @@
         </div>
         <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px;">
           <button type="button" class="btn" id="close-scan-modal-btn">Cancel</button>
-          <button type="submit" class="btn btn-primary">Save Scan & Update Charts</button>
+          <button type="submit" class="btn btn-primary">Save Scan & Update Studio</button>
         </div>
       </form>
     </div>

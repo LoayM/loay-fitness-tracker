@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loay Mualem • Body Recomposition & Performance Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="profile-brand">
+        <div class="avatar-badge">LM</div>
+        <div class="profile-title">
+          <h1>
+            Loay Mualem
+            <span class="status-pill">Recomp Active • Week 1</span>
+          </h1>
+          <div class="profile-meta">
+            <span>📏 179 cm</span>
+            <span>🎂 Age 31</span>
+            <span>🏋️ Power Training 4–6x/wk</span>
+            <span>🎯 Goal: 82.65 kg (~15% BF, 100% Muscle Retention)</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn" id="export-json-btn">⬇ Export Data</button>
+        <button class="btn btn-primary" id="open-scan-modal-btn">＋ Log New Arboleaf Scan</button>
+      </div>
+    </header>
+
+    <!-- Goal Progress Banner -->
+    <section class="goal-banner">
+      <div class="goal-summary">
+        <h2>90-Day Body Recomposition Progress</h2>
+        <p>Stripping 10.9 kg of fat while preserving 45.3 kg Skeletal Muscle via muscle memory & 180g daily protein.</p>
+      </div>
+      <div class="goal-progress-wrap">
+        <div class="goal-bar-labels">
+          <span id="goal-progress-pct">2.7% Complete</span>
+          <span id="goal-progress-detail">0.29 kg pure fat burned of 10.9 kg goal</span>
+        </div>
+        <div class="goal-bar-track">
+          <div class="goal-bar-fill" id="goal-bar-fill" style="width: 3%;"></div>
+        </div>
+      </div>
+      <div class="goal-pace-box">
+        <div class="pace-label">Measured Fat Loss Pace</div>
+        <div class="pace-val" id="pace-val">-0.68 kg/wk</div>
+        <div class="pace-sub" id="pace-sub">~2.9 kg pure fat/mo • ~744 kcal/day deficit</div>
+      </div>
+    </section>
+
+    <!-- 5 KPI Cards -->
+    <section class="kpi-grid" id="kpi-grid"></section>
+
+    <!-- Main Charts + Anatomical Segment Map -->
+    <section class="dashboard-grid">
+      <!-- Trajectory Chart -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">📈 90-Day Trajectory vs. Measured Scans</div>
+            <div class="card-subtitle">Actual Arboleaf CS10P readings vs. 3-Month Target Curve (including Dec Australia/NZ/GBR trip)</div>
+          </div>
+          <div class="pill-tabs">
+            <button class="pill-tab active" data-chart-metric="weight">Weight</button>
+            <button class="pill-tab" data-chart-metric="fatMass">Fat (kg)</button>
+            <button class="pill-tab" data-chart-metric="pbf">Body Fat %</button>
+            <button class="pill-tab" data-chart-metric="skeletalMuscle">Muscle (kg)</button>
+          </div>
+        </div>
+        <div class="chart-box" id="trajectory-chart"></div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Actual Measured Scans</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#64748b;"></span> Projected 90-Day Path to 82.65 kg</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#8b5cf6;"></span> Dec 1–22: NeurIPS (Sydney) + NZ + Great Barrier Reef</span>
+        </div>
+      </div>
+
+      <!-- Segmental Body Map -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">🧬 8-Electrode Segmental Analysis</div>
+            <div class="card-subtitle">Change from Nov 2 Baseline → Latest Scan</div>
+          </div>
+          <div class="pill-tabs">
+            <button class="pill-tab active" data-seg-mode="fat">Fat Mass</button>
+            <button class="pill-tab" data-seg-mode="muscle">Lean Muscle</button>
+          </div>
+        </div>
+
+        <div class="body-map-wrapper">
+          <!-- Anatomical Stylized SVG -->
+          <div class="body-svg-container">
+            <svg viewBox="0 0 220 360" width="185" height="310">
+              <!-- Head -->
+              <circle cx="110" cy="34" r="22" fill="#1e293b" stroke="#475569" stroke-width="2" />
+              <!-- Trunk -->
+              <rect id="svg-part-trunk" class="segment-part" x="72" y="64" width="76" height="122" rx="16"
+                fill="rgba(245, 158, 11, 0.25)" stroke="#f59e0b" stroke-width="2.2" />
+              <text x="110" y="118" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700">TRUNK</text>
+              <text id="svg-label-trunk" x="110" y="135" text-anchor="middle" fill="#fde68a" font-size="10" font-weight="700">12.64kg (-0.16)</text>
+
+              <!-- Left Arm (Viewer's Left = Right Arm, Viewer's Right = Left Arm; labeled clearly) -->
+              <rect class="segment-part" x="32" y="68" width="32" height="106" rx="14"
+                fill="rgba(56, 189, 248, 0.18)" stroke="#38bdf8" stroke-width="1.8" />
+              <text x="48" y="116" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">L. ARM</text>
+              <text id="svg-label-leftArm" x="48" y="130" text-anchor="middle" fill="#38bdf8" font-size="8.5" font-weight="700">1.65kg</text>
+
+              <!-- Right Arm -->
+              <rect class="segment-part" x="156" y="68" width="32" height="106" rx="14"
+                fill="rgba(56, 189, 248, 0.18)" stroke="#38bdf8" stroke-width="1.8" />
+              <text x="172" y="116" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">R. ARM</text>
+              <text id="svg-label-rightArm" x="172" y="130" text-anchor="middle" fill="#38bdf8" font-size="8.5" font-weight="700">1.70kg</text>
+
+              <!-- Left Leg -->
+              <rect class="segment-part" x="74" y="194" width="33" height="145" rx="15"
+                fill="rgba(16, 185, 129, 0.18)" stroke="#10b981" stroke-width="1.8" />
+              <text x="90" y="260" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">L. LEG</text>
+              <text id="svg-label-leftLeg" x="90" y="275" text-anchor="middle" fill="#6ee7b7" font-size="8.5" font-weight="700">3.27kg</text>
+
+              <!-- Right Leg -->
+              <rect class="segment-part" x="113" y="194" width="33" height="145" rx="15"
+                fill="rgba(16, 185, 129, 0.18)" stroke="#10b981" stroke-width="1.8" />
+              <text x="130" y="260" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="700">R. LEG</text>
+              <text id="svg-label-rightLeg" x="130" y="275" text-anchor="middle" fill="#6ee7b7" font-size="8.5" font-weight="700">3.28kg</text>
+            </svg>
+          </div>
+
+          <!-- Segment Breakdown List -->
+          <div class="segment-list" id="segment-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Second Row: Daily Fuel & Apple Watch 70% Calculator + 3-Month Roadmap -->
+    <section class="split-grid">
+      <!-- Daily Nutrition & Apple Watch Series 6 Calculator -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">🔥 Daily Deficit & Apple Watch Series 6 Calculator</div>
+            <div class="card-subtitle">Automatically applies the 70% lab-accuracy correction to your watch's active calories</div>
+          </div>
+        </div>
+
+        <div class="macro-rings">
+          <div class="macro-box">
+            <div class="m-name">Protein Target</div>
+            <div class="m-grams" style="color:var(--accent-emerald);">180g</div>
+            <div class="m-kcal">720 kcal (2.56g/kg LBM)</div>
+          </div>
+          <div class="macro-box">
+            <div class="m-name">Workout Carbs</div>
+            <div class="m-grams" style="color:var(--accent-cyan);">130–160g</div>
+            <div class="m-kcal">Save 40g for 1h pre-bed</div>
+          </div>
+          <div class="macro-box">
+            <div class="m-name">Healthy Fats</div>
+            <div class="m-grams" style="color:var(--accent-amber);">60–65g</div>
+            <div class="m-kcal">Hormone & brain support</div>
+          </div>
+        </div>
+
+        <div class="calc-controls">
+          <div class="control-row">
+            <label for="calc-day-type">1. Select Your Day Type:</label>
+            <select id="calc-day-type">
+              <option value="wfh">🏠 Work From Home Day (Base ~2,220 kcal)</option>
+              <option value="office">🏢 Office Day + 1h Walk (Base ~2,500 kcal)</option>
+              <option value="travel">✈️ Australia / NZ / GBR Active Day (Base ~2,650 kcal)</option>
+            </select>
+          </div>
+          <div class="control-row">
+            <label for="calc-watch-kcal">2. Apple Watch Active Workout kcal (Gym / Football):</label>
+            <input type="number" id="calc-watch-kcal" value="430" min="0" max="2500" step="10" style="width:120px;" />
+          </div>
+          <div class="control-row" style="font-size:0.78rem;color:var(--text-secondary);">
+            <span>True Net Workout Burn (70% Rule):</span>
+            <strong id="watch-adjusted-val" style="color:var(--accent-cyan);">301 kcal (70% of 430)</strong>
+          </div>
+          <div class="control-row">
+            <label for="calc-intake-kcal">3. Planned Food Intake Today (kcal):</label>
+            <input type="number" id="calc-intake-kcal" value="1800" min="1200" max="4000" step="50" style="width:120px;" />
+          </div>
+
+          <div class="calc-result-banner">
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-secondary);text-transform:uppercase;">Estimated Total Daily Burn (TDEE)</div>
+              <div id="calc-tdee-val" style="font-size:1.3rem;font-weight:800;">2,521 kcal</div>
+            </div>
+            <div style="text-align:right;">
+              <div id="calc-deficit-val" style="font-size:1.25rem;font-weight:800;color:var(--accent-emerald);">-721 kcal Deficit</div>
+              <div id="calc-fat-grams" style="font-size:0.78rem;color:var(--text-secondary);">≈ 94g pure fat burned today</div>
+            </div>
+          </div>
+
+          <p id="calc-sleep-advice" style="font-size:0.8rem;line-height:1.45;margin-top:4px;"></p>
+        </div>
+      </div>
+
+      <!-- 4-Phase Roadmap (Including NeurIPS, NZ & GBR) -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">🌏 Your 4-Phase Recomposition Roadmap</div>
+            <div class="card-subtitle">Customized around NeurIPS (Sydney), New Zealand & Great Barrier Reef</div>
+          </div>
+        </div>
+
+        <div class="roadmap-list">
+          <div class="roadmap-item">
+            <div class="rm-date">Nov 2 – Nov 30<br/><span style="color:var(--text-muted);font-size:0.7rem;">Phase 1 (Home)</span></div>
+            <div>
+              <div class="rm-title">Launch & Muscle Memory Re-Activation</div>
+              <div class="rm-desc">1,800–1,950 kcal • 180g protein • 4–5x power lifting + football. Use 40g pre-bed carbs for 8h sleep.</div>
+            </div>
+            <div class="rm-target">89.5 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">-4.0 kg</small></div>
+          </div>
+
+          <div class="roadmap-item" style="border-color:rgba(139, 92, 246, 0.4);">
+            <div class="rm-date" style="color:#c4b5fd;">Dec 1 – Dec 7<br/><span style="color:var(--text-muted);font-size:0.7rem;">Week 1 Trip</span></div>
+            <div>
+              <div class="rm-title">🇦🇺 NeurIPS Conference (Sydney)</div>
+              <div class="rm-desc">12k+ convention steps/day • 2x 30m hotel dumbbell workouts • Rokeby shake + Chobani Fit breakfast, skip break pastries.</div>
+            </div>
+            <div class="rm-target">89.0 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">2,100 kcal</small></div>
+          </div>
+
+          <div class="roadmap-item" style="border-color:rgba(56, 189, 248, 0.35);">
+            <div class="rm-date">Dec 8 – Dec 22<br/><span style="color:var(--text-muted);font-size:0.7rem;">Weeks 2–3 Trip</span></div>
+            <div>
+              <div class="rm-title">🇳🇿 New Zealand Hikes + 🪸 Great Barrier Reef</div>
+              <div class="rm-desc">High natural burn (hiking 700+ kcal, ocean swimming 500 kcal/h) • 2x 20m bodyweight sessions/wk • Fresh reef fish & NZ steak.</div>
+            </div>
+            <div class="rm-target">88.0 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">2,250 kcal</small></div>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="rm-date">Dec 23 – Feb 5<br/><span style="color:var(--text-muted);font-size:0.7rem;">Final Push</span></div>
+            <div>
+              <div class="rm-title">🏁 Home Stretch to Athletic 15% Body Fat</div>
+              <div class="rm-desc">Return to 1,800–1,950 kcal + heavy gym split for 6 weeks to strip the final ~5 kg of fat while keeping 100% muscle.</div>
+            </div>
+            <div class="rm-target">82.65 kg<br/><small style="font-size:0.72rem;color:var(--text-secondary);">~15% BF 🎯</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Arboleaf CS10P Scan History Log -->
+    <section class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">📋 Arboleaf CS10P Scan Log</div>
+          <div class="card-subtitle">Complete historical record of your morning fasted 8-electrode scans</div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="scan-table">
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Weight</th>
+              <th>Body Fat Mass</th>
+              <th>Body Fat %</th>
+              <th>Skeletal Muscle</th>
+              <th>Trunk (Belly) Fat</th>
+              <th>Protein Mass</th>
+              <th>Body Water</th>
+              <th>Fitness Score</th>
+            </tr>
+          </thead>
+          <tbody id="scan-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal to Log New Scan -->
+  <div class="modal-backdrop" id="add-scan-modal">
+    <div class="modal-card">
+      <div class="card-header" style="margin-bottom:8px;">
+        <div>
+          <div class="card-title">＋ Log New Arboleaf CS10P Scan</div>
+          <div class="card-subtitle">Enter the numbers from your new report PDF to update all charts & projections</div>
+        </div>
+      </div>
+      <form id="add-scan-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Scan Date</label>
+            <input type="date" id="f-date" required />
+          </div>
+          <div class="form-group">
+            <label>Weight (kg)</label>
+            <input type="number" step="0.01" id="f-weight" required />
+          </div>
+          <div class="form-group">
+            <label>Body Fat Mass (kg)</label>
+            <input type="number" step="0.01" id="f-fatMass" required />
+          </div>
+          <div class="form-group">
+            <label>Body Fat Percentage (PBF %)</label>
+            <input type="number" step="0.1" id="f-pbf" required />
+          </div>
+          <div class="form-group">
+            <label>Skeletal Muscle Mass (kg)</label>
+            <input type="number" step="0.1" id="f-muscle" required />
+          </div>
+          <div class="form-group">
+            <label>Trunk / Belly Fat Mass (kg)</label>
+            <input type="number" step="0.01" id="f-trunkFat" required />
+          </div>
+          <div class="form-group">
+            <label>Protein Mass (kg)</label>
+            <input type="number" step="0.1" id="f-protein" required />
+          </div>
+          <div class="form-group">
+            <label>Body Water (L)</label>
+            <input type="number" step="0.1" id="f-water" required />
+          </div>
+          <div class="form-group">
+            <label>Fitness Score (/100)</label>
+            <input type="number" step="0.1" id="f-score" required />
+          </div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px;">
+          <button type="button" class="btn" id="close-scan-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Scan & Update Charts</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
